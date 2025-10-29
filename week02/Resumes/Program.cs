@@ -11,7 +11,6 @@ class Program
         Job1._startYear = 2022;
         Job1._endYear = 2025;
         Job1._description = "Storing, sorting, and deeply analyzing company data to provide accurate and useful information to improve company performance.";
-        Job1.displayJob();
 
         Job Job2 = new Job();
 
@@ -25,7 +24,9 @@ class Program
         Resume1._name = "Sally Goodall";
         Resume1._jobs.Add(Job1);
         Resume1._jobs.Add(Job2);
-        Resume1._jobs[0]._jobTitle
+
+        Resume1.display();
+
 
     }
 }
