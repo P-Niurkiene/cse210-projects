@@ -20,9 +20,12 @@ class Program
         Job2._startYear = 2020;
         Job2._endYear = 2022;
         Job2._description = "Accurately processing physical and digital invoices in multiple foreign currencies within a 24-hour period.";
-        Job2.displayJob();
 
-
+        Resume Resume1 = new Resume();
+        Resume1._name = "Sally Goodall";
+        Resume1._jobs.Add(Job1);
+        Resume1._jobs.Add(Job2);
+        Resume1._jobs[0]._jobTitle
 
     }
 }
