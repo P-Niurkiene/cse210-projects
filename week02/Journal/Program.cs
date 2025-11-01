@@ -5,6 +5,8 @@ class Program
     static void Main(string[] args)
     {
         string choice = "";
+        List<(string question, string answer)> entries = new List<(string, string)>();
+
         Console.WriteLine("Welcome to your Personal Journal!");
         Console.WriteLine("Please select a number of what you would like to do:");
         Console.WriteLine("1. Write");
@@ -20,8 +22,9 @@ class Program
             choice = Console.ReadLine();
             if (choice == "1")
             {
-                write question = new write();
-                question.DisplayRandomLine();
+                write entry = new write();
+                var (question, answer) = entry.DisplayRandomLine();
+                entries.Add((question, answer));
             }
             else if (choice == "2")
             {
@@ -33,8 +36,21 @@ class Program
             }
             else if (choice == "4")
             {
-
+                if (entries.Count == 0)
+                {
+                    Console.Write("Whoops, there is nothing to save!");
+                }
+                else
+                {
+                    foreach (var entry in entries)
+                    {
+                        Save saving = new Save();
+                        saving.SaveEntry(entry.question, entry.answer);
+                    }
+                    entries.Clear();
+                }
             }
+
             else if (choice == "5")
             {
                 Add question = new Add();
