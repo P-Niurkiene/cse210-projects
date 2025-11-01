@@ -23,6 +23,28 @@ class Program
                 write question = new write();
                 question.DisplayRandomLine();
             }
+            else if (choice == "2")
+            {
+
+            }
+            else if (choice == "3")
+            {
+
+            }
+            else if (choice == "4")
+            {
+
+            }
+            else if (choice == "5")
+            {
+                Add question = new Add();
+                question.addQuestion();
+            }
+            else
+            {
+                Console.Write("Thank you for recording your memories today!");
+            }
+
         }
 
 
