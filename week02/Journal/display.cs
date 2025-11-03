@@ -1,11 +1,9 @@
 public class Display
 {
-    List<(string question, string answer)> entries = new List<(string, string)>();
-    public void DisplayEntries(string question, string answer)
+    public void DisplayEntry(string question, string answer, DateTime? entryDate = null)
     {
-        DateTime theCurrentDate = DateTime.Now;
-        string dateText = theCurrentDate.ToShortDateString();
-        string entry = $"Date: {dateText}: Prompt: {question} {answer}";
-        Console.WriteLine(entry);
+        DateTime date = entryDate ?? DateTime.Now;
+        string dateText = date.ToShortDateString();
+        Console.WriteLine($"Date: {dateText} | Prompt: {question} | Answer: {answer}");
     }
 }

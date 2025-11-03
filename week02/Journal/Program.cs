@@ -28,50 +28,54 @@ class Program
             }
             else if (choice == "2")
             {
+                Display display = new Display();
                 if (entries.Count == 0)
                 {
-                    foreach (var entry in entries)
-                    {
-                        Display show = new Display();
-                        show.DisplayEntries(entry.question, entry.answer);
-                    }
-                }
-                else if (choice == "3")
-                {
-                    Load journal = new Load();
-                    journal.LoadJournal();
-                }
-                else if (choice == "4")
-                {
-                    if (entries.Count == 0)
-                    {
-                        Console.Write("Whoops, there is nothing to save!");
-                    }
-                    else
-                    {
-                        foreach (var entry in entries)
-                        {
-                            Save saving = new Save();
-                            saving.SaveEntry(entry.question, entry.answer);
-                        }
-                        entries.Clear();
-                    }
-                }
-
-                else if (choice == "5")
-                {
-                    Add question = new Add();
-                    question.addQuestion();
+                    Console.WriteLine("No entries to display.");
                 }
                 else
                 {
-                    Console.Write("Thank you for recording your memories today!");
+                    foreach (var entry in entries)
+                    {
+                        display.DisplayEntry(entry.question, entry.answer);
+                    }
                 }
-
+            }
+            else if (choice == "3")
+            {
+                Load journal = new Load();
+                journal.LoadJournal();
+            }
+            else if (choice == "4")
+            {
+                if (entries.Count == 0)
+                {
+                    Console.Write("Whoops, there is nothing to save!");
+                }
+                else
+                {
+                    foreach (var entry in entries)
+                    {
+                        Save saving = new Save();
+                        saving.SaveEntry(entry.question, entry.answer);
+                    }
+                    entries.Clear();
+                }
             }
 
-
+            else if (choice == "5")
+            {
+                Add question = new Add();
+                question.addQuestion();
+            }
+            else
+            {
+                Console.Write("Thank you for recording your memories today!");
+            }
 
         }
+
+
+
     }
 }
