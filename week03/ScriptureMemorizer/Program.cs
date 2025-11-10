@@ -1,3 +1,5 @@
+// Addtional features added: An Add class so scriptures can be added and stored in a text. All scriptures are stored in a txt allowing them to be stored for future reference. 
+// Scriptures are accessed by reference, and can also be selected randomly.
 using System;
 
 class Program
