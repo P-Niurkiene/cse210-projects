@@ -1,14 +1,21 @@
+
 public class Add
 {
-    string filename = "verses.txt";
+    private string filename = "verses.txt";
 
-    public void addQuestion()
+    public void AddVerse()
     {
         Console.Write("What verse would you like to add? ");
         string verse = Console.ReadLine();
-        File.AppendAllText(filename, verse + Environment.NewLine);
-        Console.WriteLine("Your verse has been added!");
+
+        if (!string.IsNullOrWhiteSpace(verse))
+        {
+            File.AppendAllText(filename, verse + Environment.NewLine);
+            Console.WriteLine("Your verse has been added!");
+        }
+        else
+        {
+            Console.WriteLine("You didn't type anything — nothing was added.");
+        }
     }
-
-
 }
