@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 public class Comments
 {
     public string _name;
