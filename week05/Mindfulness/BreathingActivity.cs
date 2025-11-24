@@ -17,10 +17,10 @@ public class Breathing : Activity
 
         while (elapsed < totalSeconds)
         {
-            Console.Write("Breathe in: ");
+            Console.WriteLine("Breathe in: ");
             for (int i = inhaleTime; i > 0; i--)
             {
-                Console.Write(i + " ");
+                Console.Write($"\r{i}");
                 Thread.Sleep(1000);
             }
             Console.WriteLine();
@@ -28,10 +28,10 @@ public class Breathing : Activity
 
             if (elapsed >= totalSeconds) break;
 
-            Console.Write("Breathe out: ");
+            Console.WriteLine("Breathe out: ");
             for (int i = exhaleTime; i > 0; i--)
             {
-                Console.Write(i + " ");
+                Console.Write($"\r{i}");
                 Thread.Sleep(1000);
             }
             Console.WriteLine();

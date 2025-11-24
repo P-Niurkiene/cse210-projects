@@ -43,9 +43,10 @@ public class Activity
     {
         for (int i = seconds; i > 0; i--)
         {
-            Console.Write(i);
+            Console.Write($"\r{i}   "); // \r returns to start of line, spaces clear old digits
             Thread.Sleep(1000);
-            Console.Write("\b \b");
         }
+        Console.WriteLine(); // move to the next line when done
     }
+
 }

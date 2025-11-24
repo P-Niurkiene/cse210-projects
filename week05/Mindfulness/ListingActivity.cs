@@ -23,8 +23,8 @@ public class Listing : Activity
         Console.WriteLine(prompt);
 
         ShowSpinner(3);
-        List<string> items = GetListFromUser();
         ShowCountdown(seconds);
+        List<string> items = GetListFromUser();
         Console.WriteLine(items);
 
         DisplayEndingMessage();
