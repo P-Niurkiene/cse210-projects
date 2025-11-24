@@ -10,7 +10,7 @@ public class Listing : Activity
         _count = count;
         _prompts.Add("What are 5 things you are grateful for?");
         _prompts.Add("Who are 5 people you are thankful for?");
-        _prompts.Add("WHat are 5 things that made you smile today?");
+        _prompts.Add("What are 5 things that made you smile today?");
     }
 
     public void Run()
@@ -25,7 +25,6 @@ public class Listing : Activity
         ShowSpinner(3);
         ShowCountdown(seconds);
         List<string> items = GetListFromUser();
-        Console.WriteLine(items);
 
         DisplayEndingMessage();
     }
