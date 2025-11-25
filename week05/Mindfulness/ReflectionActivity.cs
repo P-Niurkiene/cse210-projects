@@ -4,8 +4,8 @@ public class Reflection : Activity
     private List<string> _questions = new List<string>();
     private Random _random = new Random();
 
-    public Reflection(string name, string description, string duration)
-        : base(name, description, duration)
+    public Reflection(string name, string description)
+        : base(name, description)
     {
         _prompts.Add("Think about a time you overcame a challenge.");
         _prompts.Add("Reflect on something you are grateful for today.");
@@ -16,10 +16,8 @@ public class Reflection : Activity
 
     public void Run()
     {
-        DisplayStartingMessage();
+        int seconds = DisplayStartingMessage();
 
-        Console.WriteLine("How long would you like to do this exercise for (seconds)?");
-        int seconds = int.Parse(Console.ReadLine());
         string prompt = GetRandomPrompt();
         Console.WriteLine(prompt);
 

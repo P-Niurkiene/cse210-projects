@@ -2,19 +2,20 @@ public class Activity
 {
     private string _name;
     private string _description;
-    private string _duration;
 
-    public Activity(string name, string description, string duration)
+    public Activity(string name, string description)
     {
         _name = name;
         _description = description;
-        _duration = duration;
     }
 
-    public void DisplayStartingMessage()
+    public int DisplayStartingMessage()
     {
-        Console.WriteLine("Hello, and welcome to this mindful activity. This will help clear your mind and improve your focus. Let's get started!");
+        Console.WriteLine($"Welcome to the {_name} Activity. {_description}.");
         Thread.Sleep(2000);
+        Console.WriteLine("How long would you like to do this exercise for (seconds)?");
+        int seconds = int.Parse(Console.ReadLine());
+        return seconds;
     }
 
     public void DisplayEndingMessage()
@@ -43,10 +44,10 @@ public class Activity
     {
         for (int i = seconds; i > 0; i--)
         {
-            Console.Write($"\r{i}   "); // \r returns to start of line, spaces clear old digits
+            Console.Write($"\r{i}   ");
             Thread.Sleep(1000);
         }
-        Console.WriteLine(); // move to the next line when done
+        Console.WriteLine();
     }
 
 }

@@ -20,22 +20,22 @@ class Program
 
             if (activity == "1")
             {
-                Breathing breathing = new Breathing("Breathing", "Slow down your heart and mind through deep breaths", "60 seconds");
+                Breathing breathing = new Breathing("Breathing", "Slow down your heart and mind through deep breaths");
                 breathing.Run();
             }
             else if (activity == "2")
             {
-                Reflection reflection = new Reflection("Reflecting", "Look back at you life experiences", "180 seconds");
+                Reflection reflection = new Reflection("Reflecting", "Look back at you life experiences");
                 reflection.Run();
             }
             else if (activity == "3")
             {
-                Listing list = new Listing("List", "Make a list to highlight the postive things in your life", "180 seconds", 5);
+                Listing list = new Listing("List", "Make a list to highlight the postive things in your life", 5);
                 list.Run();
             }
             else if (activity == "4")
             {
-                PositiveWords quote = new PositiveWords("Insprational Quotes", "Feel uplifted and inspired but the wise words of others", "60 seconds");
+                PositiveWords quote = new PositiveWords("Insprational Quotes", "Feel uplifted and inspired but the wise words of others");
                 quote.Run();
             }
             else if (activity == "5")

@@ -4,8 +4,8 @@ public class Listing : Activity
     private List<string> _prompts = new List<string>();
     private Random _random = new Random();
 
-    public Listing(string name, string description, string duration, int count)
-        : base(name, description, duration)
+    public Listing(string name, string description, int count)
+        : base(name, description)
     {
         _count = count;
         _prompts.Add("What are 5 things you are grateful for?");
@@ -15,10 +15,8 @@ public class Listing : Activity
 
     public void Run()
     {
-        DisplayStartingMessage();
+        int seconds = DisplayStartingMessage();
 
-        Console.WriteLine("How long would you like to do this exercise for (seconds)?");
-        int seconds = int.Parse(Console.ReadLine());
         string prompt = GetRandomPrompt();
         Console.WriteLine(prompt);
 
