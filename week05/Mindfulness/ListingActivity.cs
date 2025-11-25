@@ -1,48 +1,43 @@
 public class Listing : Activity
 {
-    private int _count;
     private List<string> _prompts = new List<string>();
     private Random _random = new Random();
 
-    public Listing(string name, string description, int count)
+    public Listing(string name, string description)
         : base(name, description)
     {
-        _count = count;
-        _prompts.Add("What are 5 things you are grateful for?");
-        _prompts.Add("Who are 5 people you are thankful for?");
-        _prompts.Add("What are 5 things that made you smile today?");
+        _prompts.Add("What are some things you are grateful for?");
+        _prompts.Add("Who are people that help you in your life?");
+        _prompts.Add("What are some acts of kindness you’ve recently seen?");
     }
 
     public void Run()
     {
         int seconds = DisplayStartingMessage();
 
-        string prompt = GetRandomPrompt();
-        Console.WriteLine(prompt);
+        Console.WriteLine("List as many items as you can.");
+        Console.WriteLine(GetRandomPrompt());
+        ShowSpinner(2);
 
-        ShowSpinner(3);
-        ShowCountdown(seconds);
-        List<string> items = GetListFromUser();
+        DateTime endTime = DateTime.Now.AddSeconds(seconds);
+        List<string> items = new List<string>();
 
+        while (DateTime.Now < endTime)
+        {
+            Console.Write("> ");
+            if (Console.KeyAvailable)
+            {
+                string item = Console.ReadLine();
+                items.Add(item);
+            }
+        }
+
+        Console.WriteLine($"You listed {items.Count} items!");
         DisplayEndingMessage();
     }
 
-    public string GetRandomPrompt()
+    private string GetRandomPrompt()
     {
         return _prompts[_random.Next(_prompts.Count)];
-    }
-
-    public List<string> GetListFromUser()
-    {
-        List<string> items = new List<string>();
-
-        Console.WriteLine($"List {_count} things:");
-
-        for (int i = 0; i < _count; i++)
-        {
-            items.Add(Console.ReadLine());
-        }
-
-        return items;
     }
 }

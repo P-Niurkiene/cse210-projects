@@ -1,4 +1,5 @@
-// Addtional Class added to show insprational quotes.
+// Addtional Activity Class added to the program called postive words, which gives an uplifiting message to the user.
+
 using System;
 
 class Program
@@ -30,7 +31,7 @@ class Program
             }
             else if (activity == "3")
             {
-                Listing list = new Listing("List", "Make a list to highlight the postive things in your life", 5);
+                Listing list = new Listing("List", "Make a list to highlight the postive things in your life");
                 list.Run();
             }
             else if (activity == "4")
