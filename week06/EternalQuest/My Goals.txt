@@ -1,0 +1,3 @@
+10
+ChecklistGoal:Daily scripture reading,Read one verse from the scriptures this week,10,1,7,100
+SimpleGoal:Attend church,Attend church this Sunday,10,False

@@ -178,19 +178,19 @@ public class GoalManager
         Console.Write("Enter filename to save: ");
         string filename = Console.ReadLine();
 
-        using (StreamWriter output = new StreamWriter(filename))
-        {
-            output.WriteLine(_score);
+        List<string> lines = new List<string>
+    {
+        _score.ToString()
+    };
 
-            foreach (Goal goal in _goals)
-            {
-                output.WriteLine(goal.GetRepresentation());
-            }
+        foreach (Goal goal in _goals)
+        {
+            lines.Add(goal.GetRepresentation());
         }
 
+        File.WriteAllLines(filename, lines);
         Console.WriteLine("Goals saved successfully!");
     }
-
 
     public void LoadGoals()
     {
@@ -218,11 +218,7 @@ public class GoalManager
             }
             else if (type == "ChecklistGoal")
             {
-                _goals.Add(new CheckList(
-                    data[0], data[1], data[2],
-                    int.Parse(data[3]),
-                    int.Parse(data[4]),
-                    int.Parse(data[5])
+                _goals.Add(new CheckList(data[0], data[1], data[2], int.Parse(data[3]), int.Parse(data[4]), int.Parse(data[5])
                 ));
             }
         }
